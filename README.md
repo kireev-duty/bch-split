@@ -3,7 +3,7 @@
 Split a dinner, a trip or a shared subscription with friends and get paid in Bitcoin Cash.
 No sign-up, no backend, no custody.
 
-**Live demo:** https://kireev-duty.github.io/bch-split/ <!-- update after the first deploy -->
+**Live demo:** https://kireev-duty.github.io/bch-split/
 
 ## How it works
 
