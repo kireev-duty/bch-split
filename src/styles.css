@@ -1,0 +1,89 @@
+:root {
+  --bg: #0b1117;
+  --card: #121b24;
+  --line: #22303d;
+  --text: #e8eef3;
+  --muted: #8a9aa8;
+  --green: #0ac18e;
+  --green-dim: #0ac18e22;
+  --red: #ff6b6b;
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85em; word-break: break-all; }
+a { color: var(--green); }
+
+.page { max-width: 920px; margin: 0 auto; padding: 0 16px 48px; }
+
+.blaze {
+  display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center;
+  margin: 0 -16px; padding: 8px 16px; font-size: 13px;
+  background: linear-gradient(90deg, #ff7a18, #ffb347); color: #1a1006;
+}
+.blaze a { color: #1a1006; font-weight: 600; }
+
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; gap: 12px; }
+.brand { display: flex; gap: 10px; align-items: center; font-weight: 700; font-size: 18px; color: var(--text); text-decoration: none; }
+.badge { display: flex; gap: 8px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 14px; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+h1 { margin: 0 0 6px; font-size: 26px; }
+h2 { margin: 0 0 12px; font-size: 17px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.hint { color: var(--green); margin: 0; }
+.error { color: var(--red); }
+.success { color: var(--green); }
+
+form { display: grid; gap: 16px; margin-top: 20px; }
+label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+input, textarea {
+  width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line);
+  border-radius: 10px; padding: 12px; font: inherit; font-size: 16px;
+}
+input:focus, textarea:focus { outline: 2px solid var(--green); border-color: transparent; }
+.row { display: flex; gap: 8px; }
+.row input { flex: 1; min-width: 0; }
+
+button { font: inherit; cursor: pointer; border-radius: 10px; border: 1px solid var(--line); padding: 10px 16px; }
+button:disabled { opacity: 0.5; cursor: default; }
+.primary { background: var(--green); color: #04130d; border-color: var(--green); font-weight: 700; }
+.primary.small { padding: 8px 12px; font-size: 14px; }
+.ghost { background: transparent; color: var(--text); }
+.link { background: none; border: none; color: var(--muted); padding: 0; text-decoration: underline; }
+.segmented { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.segmented button { border: none; border-radius: 0; background: transparent; color: var(--muted); }
+.segmented .on { background: var(--green-dim); color: var(--green); }
+
+.bill { display: grid; grid-template-columns: 1fr 260px; gap: 16px; align-items: start; }
+.bill-head { display: flex; justify-content: space-between; gap: 16px; }
+.progress-num { font-size: 32px; font-weight: 800; color: var(--green); text-align: right; line-height: 1; }
+.progress-num span { display: block; font-size: 12px; font-weight: 500; color: var(--muted); }
+.progress { height: 8px; background: var(--bg); border-radius: 99px; margin: 16px 0 8px; overflow: hidden; }
+.progress div { height: 100%; background: var(--green); transition: width 0.6s ease; }
+
+.people { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 8px; }
+.people li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; }
+.people li.paid { background: var(--green-dim); border-color: #0ac18e55; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--line); font-weight: 700; flex: none; }
+.paid .avatar { background: var(--green); color: #04130d; }
+.name { flex: 1; font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.status { font-size: 14px; text-decoration: none; white-space: nowrap; }
+
+.share { display: grid; gap: 10px; justify-items: center; text-align: center; }
+.share button { width: 100%; }
+.qr { border-radius: 12px; background: #fff; }
+
+footer { margin-top: 32px; color: var(--muted); font-size: 13px; text-align: center; }
+
+@media (max-width: 720px) {
+  .bill { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+  .people li { flex-wrap: wrap; }
+  .status, .people .primary { margin-left: 44px; }
+}
